@@ -43,6 +43,8 @@ header {
   backdrop-filter: blur(6px);
 }
 
+.nav-wrap { position: relative; }
+
 .nav-wrap {
   max-width: var(--max-width);
   margin: 0 auto;
@@ -81,7 +83,32 @@ nav a:hover { color: var(--gold); }
   letter-spacing: 0.03em;
 }
 
-.menu-toggle { display: none; background: none; border: none; color: #fff; font-size: 26px; cursor: pointer; }
+.menu-toggle { display: none; background: none; border: none; color: #fff; font-size: 26px; cursor: pointer; line-height: 1; }
+
+/* Mobile nav dropdown */
+.mobile-nav {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: var(--navy);
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding: 12px 24px 24px;
+}
+.mobile-nav.open { display: block; }
+.mobile-nav ul { list-style: none; display: flex; flex-direction: column; }
+.mobile-nav a {
+  display: block;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.mobile-nav .nav-cta { display: inline-block; margin-top: 18px; }
 
 /* Hero — full-bleed photo, text overlaid */
 .hero {
@@ -319,12 +346,26 @@ footer { background: var(--navy); color: rgba(255,255,255,0.85); padding: 70px 0
   nav, .nav-cta { display: none; }
   .menu-toggle { display: block; }
   .hero { min-height: 70vh; }
-  .service-block { grid-template-columns: 1fr; gap: 28px; }
+  section { padding: 56px 0; }
+  .section-head { margin-bottom: 36px; }
+  .service-block { grid-template-columns: 1fr; gap: 28px; margin-bottom: 64px; }
   .service-block.reverse { direction: ltr; }
   .other-grid { grid-template-columns: repeat(2, 1fr); }
   .why-grid { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; }
   .trust-grid { grid-template-columns: repeat(2, 1fr); }
   .btn-outline { margin-left: 0; margin-top: 12px; display: inline-block; }
-  .reviews-banner { padding: 32px 24px; }
+  .reviews-banner { padding: 32px 24px; flex-direction: column; align-items: flex-start; }
+  .price-card { padding: 22px; }
+  .price-table th, .price-table td { padding: 10px 8px; font-size: 13px; }
+  .whatsapp-float { width: 50px; height: 50px; font-size: 22px; bottom: 16px; right: 16px; }
+}
+
+@media (max-width: 480px) {
+  .nav-wrap { padding: 10px 16px; }
+  .logo img { height: 30px; }
+  .container { padding: 0 16px; }
+  .hero-content { padding: 50px 0; }
+  .hero p { font-size: 16px; }
+  .btn, .btn-outline { padding: 14px 22px; font-size: 13px; }
 }
