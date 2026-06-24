@@ -369,3 +369,65 @@ footer { background: var(--navy); color: rgba(255,255,255,0.85); padding: 70px 0
   .hero p { font-size: 16px; }
   .btn, .btn-outline { padding: 14px 22px; font-size: 13px; }
 }
+
+/* Service scope modal */
+.scope-trigger {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--navy);
+  border-bottom: 2px solid var(--gold);
+  padding-bottom: 2px;
+  background: none;
+  border-top: none; border-left: none; border-right: none;
+  cursor: pointer;
+  font-family: inherit;
+  margin-right: 24px;
+}
+.cta-row { display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: center; }
+
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(13,27,42,0.6);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+.modal-overlay.open { display: flex; }
+.modal-box {
+  background: #fff;
+  border-radius: 16px;
+  max-width: 560px;
+  width: 100%;
+  max-height: 85vh;
+  overflow-y: auto;
+  padding: 40px;
+  position: relative;
+}
+.modal-close {
+  position: absolute;
+  top: 20px; right: 20px;
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  background: var(--cream);
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+}
+.modal-box .eyebrow { color: var(--gold); font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; display: block; margin-bottom: 10px; }
+.modal-box h3 { font-size: 26px; margin-bottom: 16px; padding-right: 30px; }
+.modal-box .modal-desc { color: var(--muted); font-size: 15px; margin-bottom: 24px; }
+.modal-box h4 { font-family: "Inter", sans-serif; font-size: 14px; text-transform: uppercase; letter-spacing: 0.05em; margin: 22px 0 10px; color: var(--text); }
+.modal-box ul.scope-list { list-style: none; }
+.modal-box ul.scope-list li { padding: 8px 0 8px 26px; position: relative; font-size: 15px; color: var(--text); border-bottom: 1px solid #f0ede5; }
+.modal-box ul.scope-list li::before { content: "\2713"; position: absolute; left: 0; color: var(--gold); font-weight: 700; }
+.modal-box ul.scope-list.exclude li::before { content: "\2715"; color: #c0392b; }
+.modal-box .modal-cta { margin-top: 28px; }
+
+@media (max-width: 480px) {
+  .modal-box { padding: 28px 22px; }
+}
