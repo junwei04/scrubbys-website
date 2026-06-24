@@ -264,6 +264,18 @@ section { padding: 90px 0; }
 .reviews-rating { display: flex; align-items: center; gap: 20px; }
 .reviews-rating .score { font-family: "Playfair Display", serif; font-size: 56px; color: var(--gold); line-height: 1; }
 .reviews-stars { color: var(--gold); font-size: 22px; letter-spacing: 2px; }
+
+.review-avatar {
+  width: 42px; height: 42px; border-radius: 50%;
+  background: var(--navy); color: var(--gold);
+  display: flex; align-items: center; justify-content: center;
+  font-family: "Playfair Display", serif; font-weight: 700; font-size: 17px;
+  flex-shrink: 0;
+}
+.review-head { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+.review-head .who { display: flex; flex-direction: column; }
+.review-head .name { font-size: 14px; font-weight: 700; color: var(--text); }
+.review-head .src { font-size: 12px; color: var(--muted); }
 .reviews-rating .count { color: rgba(255,255,255,0.7); font-size: 14px; margin-top: 4px; }
 
 /* Stats / trust bar */
