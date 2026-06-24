@@ -371,7 +371,26 @@ footer { background: var(--navy); color: rgba(255,255,255,0.85); padding: 70px 0
 }
 
 /* Service scope modal */
-.scope-trigger {
+.service-list-clickable li.scope-trigger {
+  cursor: pointer;
+  transition: background 0.15s, padding-left 0.15s;
+  border-radius: 6px;
+}
+.service-list-clickable li.scope-trigger:hover {
+  background: var(--cream);
+  padding-left: 8px;
+}
+.service-list-clickable li.scope-trigger span:first-child::after {
+  content: " \2192";
+  color: var(--gold);
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+.service-list-clickable li.scope-trigger:hover span:first-child::after {
+  opacity: 1;
+}
+
+button.scope-trigger {
   display: inline-block;
   font-weight: 700;
   font-size: 14px;
