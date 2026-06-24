@@ -83,18 +83,23 @@ nav a:hover { color: var(--gold); }
 
 .menu-toggle { display: none; background: none; border: none; color: #fff; font-size: 26px; cursor: pointer; }
 
-/* Hero */
+/* Hero — split layout, image keeps its natural portrait crop, never stretched to landscape */
 .hero {
-  position: relative;
-  min-height: 86vh;
-  display: flex;
-  align-items: center;
-  background-size: cover;
-  background-position: center;
-  background-image: linear-gradient(180deg, rgba(13,27,42,0.55), rgba(13,27,42,0.75)), url('../img/hero-living-room.jpg');
+  background: var(--navy);
+  padding: 60px 0 0;
 }
 
-.hero-content { max-width: 640px; padding: 80px 24px; }
+.hero-grid {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: 1fr 0.85fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.hero-content { padding: 40px 0 60px; }
 
 .hero-content .eyebrow {
   color: var(--gold);
@@ -108,8 +113,8 @@ nav a:hover { color: var(--gold); }
 
 .hero h1 {
   color: #fff;
-  font-size: clamp(36px, 5.5vw, 56px);
-  line-height: 1.08;
+  font-size: clamp(34px, 4.8vw, 50px);
+  line-height: 1.1;
   margin-bottom: 22px;
 }
 
@@ -119,6 +124,16 @@ nav a:hover { color: var(--gold); }
   margin-bottom: 32px;
   max-width: 480px;
 }
+
+.hero-img {
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 30px 70px rgba(0,0,0,0.35);
+  align-self: end;
+  max-height: 560px;
+}
+.hero-img img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
 
 .btn {
   display: inline-block;
@@ -174,7 +189,8 @@ section { padding: 90px 0; }
 .service-block.reverse { direction: rtl; }
 .service-block.reverse > * { direction: ltr; }
 
-.service-img img { border-radius: 6px; box-shadow: 0 20px 50px rgba(13,27,42,0.18); }
+.service-img { aspect-ratio: 3 / 4; overflow: hidden; border-radius: 6px; box-shadow: 0 20px 50px rgba(13,27,42,0.18); }
+.service-img img { width: 100%; height: 100%; object-fit: cover; object-position: center; border-radius: 6px; }
 
 .service-text .eyebrow {
   color: var(--gold); font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; display: block; margin-bottom: 10px;
@@ -216,6 +232,39 @@ section { padding: 90px 0; }
 }
 .faq-item h3 { font-size: 19px; margin-bottom: 10px; font-family: "Inter", sans-serif; }
 .faq-item p { color: var(--muted); font-size: 16px; }
+
+/* Why Us */
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+.why-card {
+  background: #fff;
+  border: 1px solid #e6e6e6;
+  border-radius: 8px;
+  padding: 32px 28px;
+}
+.why-card .icon { font-size: 28px; margin-bottom: 16px; display: block; }
+.why-card h3 { font-family: "Inter", sans-serif; font-size: 18px; margin-bottom: 10px; }
+.why-card p { color: var(--muted); font-size: 15px; }
+
+/* Reviews */
+.reviews-banner {
+  background: var(--navy);
+  color: #fff;
+  border-radius: 10px;
+  padding: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+.reviews-rating { display: flex; align-items: center; gap: 20px; }
+.reviews-rating .score { font-family: "Playfair Display", serif; font-size: 56px; color: var(--gold); line-height: 1; }
+.reviews-stars { color: var(--gold); font-size: 22px; letter-spacing: 2px; }
+.reviews-rating .count { color: rgba(255,255,255,0.7); font-size: 14px; margin-top: 4px; }
 
 /* Stats / trust bar */
 .trust-bar {
@@ -270,10 +319,14 @@ footer { background: var(--navy); color: rgba(255,255,255,0.85); padding: 70px 0
 @media (max-width: 860px) {
   nav, .nav-cta { display: none; }
   .menu-toggle { display: block; }
+  .hero-grid { grid-template-columns: 1fr; }
+  .hero-img { max-height: 420px; order: -1; }
   .service-block { grid-template-columns: 1fr; gap: 28px; }
   .service-block.reverse { direction: ltr; }
   .other-grid { grid-template-columns: repeat(2, 1fr); }
+  .why-grid { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; }
   .trust-grid { grid-template-columns: repeat(2, 1fr); }
   .btn-outline { margin-left: 0; margin-top: 12px; display: inline-block; }
+  .reviews-banner { padding: 32px 24px; }
 }
