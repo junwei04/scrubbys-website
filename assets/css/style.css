@@ -375,6 +375,10 @@ footer { background: var(--navy); color: rgba(255,255,255,0.85); padding: 70px 0
 .price-card .tagline { color: var(--muted); font-size: 15px; margin-bottom: 22px; }
 .price-meta { font-size: 14px; color: var(--muted); margin-top: 16px; }
 .price-meta strong { color: var(--text); }
+.price-card ul.terms-list { list-style: none; padding: 0; margin: 0; }
+.price-card ul.terms-list li { padding: 9px 0 9px 24px; position: relative; font-size: 15.5px; line-height: 1.55; color: var(--text); border-bottom: 1px solid #f0ede5; }
+.price-card ul.terms-list li:last-child { border-bottom: none; }
+.price-card ul.terms-list li::before { content: "\2022"; position: absolute; left: 4px; color: var(--gold); font-weight: 700; }
 
 @media (max-width: 860px) {
   nav, .nav-cta { display: none; }
