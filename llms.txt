@@ -3,13 +3,13 @@
 > Singapore-owned professional cleaning company specialising in residential deep cleaning, founded 2022. Serves HDB flats, condominiums, and landed properties across Singapore.
 
 ## Services
-- Post Renovation Cleaning — from $350 (300-599 sft), scales by size
-- End of Tenancy Cleaning — from $380 (300-599 sft), scales by size
-- Spring Cleaning — from $380 (300-599 sft), scales by size
-- Upholstery Cleaning — sofa, mattress, curtains, carpet/rug, chairs
-- Floor Deep Scrub (Rotowash Floor Scrub) — vinyl, cement, tiles, parquet, engineered timber, marble — from $250
-- Formaldehyde Treatment — from $288, includes pre and post air quality readings
-- Kitchen Exhaust Duct & F&B Area Cleaning — commercial kitchens, restaurants, cafes, quoted after site inspection
+- Post Renovation Cleaning: from $350 (300 to 599 sft), scales by size
+- End of Tenancy Cleaning: from $380 (300 to 599 sft), scales by size
+- Spring Cleaning: from $380 (300 to 599 sft), scales by size
+- Upholstery Cleaning: sofa, mattress, curtains, carpet/rug, chairs
+- Floor Deep Scrub (Rotowash Floor Scrub): vinyl, cement, tiles, parquet, engineered timber, marble, from $250
+- Formaldehyde Treatment: from $288, includes pre and post air quality readings
+- Kitchen Exhaust Duct & F&B Area Cleaning: commercial kitchens, restaurants, cafes, quoted after site inspection
 - Standalone cleaning: oven/hood degreasing, window cleaning, toilet deep clean
 - Specialised cleaning: chandelier cleaning, high level cleaning
 - Other services: painting, handyman, marble and parquet polishing, aircon servicing

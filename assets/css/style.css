@@ -83,7 +83,7 @@ nav a:hover { color: var(--gold); }
   letter-spacing: 0.03em;
 }
 
-.menu-toggle { display: none; background: none; border: none; color: #fff; font-size: 26px; cursor: pointer; line-height: 1; }
+.menu-toggle { display: none; background: none; border: none; color: #fff; cursor: pointer; align-items: center; justify-content: center; padding: 4px; }
 
 /* Mobile nav dropdown */
 .mobile-nav {
@@ -277,7 +277,8 @@ section { padding: 90px 0; }
 }
 .reviews-rating { display: flex; align-items: center; gap: 20px; }
 .reviews-rating .score { font-family: "Playfair Display", serif; font-size: 56px; color: var(--gold); line-height: 1; }
-.reviews-stars { color: var(--gold); font-size: 22px; letter-spacing: 2px; }
+.reviews-stars { color: var(--gold); display: flex; gap: 3px; }
+.reviews-stars svg { display: block; }
 
 .review-avatar {
   width: 42px; height: 42px; border-radius: 50%;
@@ -349,7 +350,7 @@ footer { background: var(--navy); color: rgba(255,255,255,0.85); padding: 70px 0
 
 @media (max-width: 860px) {
   nav, .nav-cta { display: none; }
-  .menu-toggle { display: block; }
+  .menu-toggle { display: flex; }
   .hero { min-height: 70vh; }
   section { padding: 56px 0; }
   .section-head { margin-bottom: 36px; }
