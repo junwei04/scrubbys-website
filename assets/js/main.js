@@ -80,6 +80,15 @@
     });
   });
 
+  const propertySelect = document.getElementById('qf-property');
+  const bedroomsWrap = document.getElementById('qf-bedrooms-wrap');
+  if (propertySelect && bedroomsWrap) {
+    propertySelect.addEventListener('change', function () {
+      bedroomsWrap.style.display = propertySelect.value === 'Condo' ? 'block' : 'none';
+      if (propertySelect.value !== 'Condo') document.getElementById('qf-bedrooms').value = '';
+    });
+  }
+
   if (form) {
     form.addEventListener('submit', function (e) {
       e.preventDefault();
@@ -91,6 +100,7 @@
         .map(function (key) { return SERVICE_LABELS[key]; });
 
       const property = document.getElementById('qf-property').value;
+      const bedrooms = document.getElementById('qf-bedrooms').value;
       const size = document.getElementById('qf-size').value;
       const date = document.getElementById('qf-date').value;
       const name = document.getElementById('qf-name').value.trim();
@@ -99,6 +109,7 @@
       const lines = ['Hi Scrubbys, I would like a quote.'];
       lines.push('Service(s): ' + (services.length ? services.join(', ') : 'Not sure yet, please advise'));
       if (property) lines.push('Property Type: ' + property);
+      if (property === 'Condo' && bedrooms) lines.push('Number of Bedrooms: ' + bedrooms);
       if (size) lines.push('Unit Size: ' + size);
       if (date) lines.push('Preferred Date: ' + date);
       if (name) lines.push('Name: ' + name);
