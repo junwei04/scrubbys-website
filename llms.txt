@@ -1,6 +1,6 @@
 # Scrubbys SG
 
-> Singapore-owned professional cleaning company specialising in residential deep cleaning, founded 2022. Serves HDB flats, condominiums, and landed properties across Singapore.
+> Singapore-owned professional cleaning company specialising in residential deep cleaning, founded 2022. Serves HDB flats, condominiums, and landed properties across Singapore. NEA licensed, bizSAFE Level 3 certified.
 
 ## Services
 - Post Renovation Cleaning: from $350 (300 to 599 sft), scales by size
@@ -9,10 +9,26 @@
 - Upholstery Cleaning: sofa, mattress, curtains, carpet/rug, chairs
 - Floor Deep Scrub (Rotowash Floor Scrub): vinyl, cement, tiles, parquet, engineered timber, marble, from $250
 - Formaldehyde Treatment: from $288, includes pre and post air quality readings
+- Standalone Cleaning: oven and hood degreasing, window clean and polish, toilet deep clean, quoted individually
 - Kitchen Exhaust Duct & F&B Area Cleaning: commercial kitchens, restaurants, cafes, quoted after site inspection
-- Standalone cleaning: oven/hood degreasing, window cleaning, toilet deep clean
-- Specialised cleaning: chandelier cleaning, high level cleaning
-- Other services: painting, handyman, marble and parquet polishing, aircon servicing
+- Specialised & High Level Cleaning: chandelier cleaning, high level cleaning, quoted individually
+- Other Services: painting, handyman, marble and parquet polishing, aircon servicing
+
+## Condo Pricing
+For condo units, pricing is based on whichever is bigger: unit size or number of bedrooms.
+- 1 bedder: equivalent to 300 to 599 sft
+- 2 bedder: equivalent to 600 to 799 sft
+- 3 bedder: equivalent to 800 to 1299 sft
+- 4 bedder: equivalent to 1300 to 1599 sft
+- 5 bedder or more: equivalent to 1600 sft and above
+This applies to Post Renovation Cleaning, End of Tenancy Cleaning, Spring Cleaning, Floor Deep Scrub, and Formaldehyde Treatment.
+
+## Booking Terms
+- Deposit required to confirm booking, typically $150 to $200
+- Time slots are first come first serve
+- Rescheduling: 1 free reschedule, then $60 fee for late changes (less than 3 days notice) or subsequent changes
+- Cancellation: deposit fully forfeited per service booked
+- Full terms at the Booking & Service Terms page
 
 ## Contact
 - WhatsApp: +65 90716978
@@ -21,5 +37,6 @@
 - UEN: 202313458R
 
 ## Pages
-- [Home](https://www.scrubbys.sg/): Services overview, about, FAQ
-- [Pricing](https://www.scrubbys.sg/pricelist.html): Full price list by service and unit size
+- [Home](https://www.scrubbys.sg/): Services overview, about, reviews, FAQ
+- [Pricing](https://www.scrubbys.sg/pricelist.html): Full price list by service and unit size, condo bedroom guide
+- [Booking & Service Terms](https://www.scrubbys.sg/terms.html): Deposit, rescheduling, cancellation, and liability terms

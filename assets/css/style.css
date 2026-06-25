@@ -384,7 +384,7 @@ footer { background: var(--navy); color: rgba(255,255,255,0.85); padding: 70px 0
 .price-table th, .price-table td { padding: 12px 14px; text-align: left; border-bottom: 1px solid #e3ddd0; font-size: 15px; }
 .price-table th { background: var(--navy); color: #fff; font-weight: 600; font-size: 13px; text-transform: uppercase; letter-spacing: 0.04em; }
 .price-card { background: #fff; border: 1px solid #e6e6e6; border-radius: 16px; padding: 32px; margin-bottom: 40px; }
-.price-card h3 { font-size: 24px; margin-bottom: 6px; }
+.price-card h2, .price-card h3 { font-size: 24px; margin-bottom: 6px; }
 .price-card .tagline { color: var(--muted); font-size: 15px; margin-bottom: 22px; }
 .price-meta { font-size: 14px; color: var(--muted); margin-top: 16px; }
 .price-meta strong { color: var(--text); }
