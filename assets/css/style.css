@@ -307,6 +307,11 @@ section { padding: 90px 0; }
 .trust-grid .num { font-family: "Playfair Display", serif; font-size: 34px; color: var(--gold); }
 .trust-grid .label { font-size: 13px; text-transform: uppercase; letter-spacing: 0.06em; opacity: 0.8; }
 
+.credentials-bar { background: #fff; border-bottom: 1px solid #ece7da; padding: 16px 0; }
+.credentials-row { display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap; }
+.credential-badge { height: 34px; width: auto; }
+.credentials-row span { font-size: 13px; color: var(--muted); font-weight: 600; letter-spacing: 0.02em; text-align: center; }
+
 /* Contact / footer */
 footer { background: var(--navy); color: rgba(255,255,255,0.85); padding: 70px 0 30px; }
 .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 40px; margin-bottom: 50px; }
