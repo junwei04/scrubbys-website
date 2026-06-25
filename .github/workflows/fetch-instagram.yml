@@ -1,0 +1,26 @@
+name: Fetch Instagram Posts
+
+on:
+  schedule:
+    - cron: '15 20 * * *'
+  workflow_dispatch: {}
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Fetch Instagram posts
+        env:
+          IG_PAGE_TOKEN: ${{ secrets.IG_PAGE_TOKEN }}
+        run: python3 scripts/fetch_instagram.py
+      - name: Commit if changed
+        run: |
+          git config user.name "scrubbys-bot"
+          git config user.email "actions@github.com"
+          git add assets/data/instagram.json
+          git diff --staged --quiet || git commit -m "Update Instagram feed"
+          git push

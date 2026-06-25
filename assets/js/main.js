@@ -123,6 +123,40 @@
   }
 })();
 
+// Instagram feed
+(function () {
+  const grid = document.getElementById('instagram-grid');
+  if (!grid) return;
+
+  const playSvg = '<svg class="ig-play" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>';
+
+  function escapeHtml(str) {
+    return (str || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  }
+
+  function buildCard(post) {
+    const a = document.createElement('a');
+    a.className = 'instagram-card';
+    a.href = post.permalink;
+    a.target = '_blank';
+    a.rel = 'noopener';
+    const isVideo = post.media_type === 'VIDEO';
+    a.innerHTML =
+      '<img src="' + post.image + '" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest(\'.instagram-card\').style.display=\'none\';">' +
+      (isVideo ? playSvg : '') +
+      '<div class="ig-overlay"><div class="ig-caption">' + escapeHtml(post.caption) + '</div></div>';
+    return a;
+  }
+
+  fetch('assets/data/instagram.json')
+    .then(function (res) { return res.json(); })
+    .then(function (data) {
+      const posts = data.posts || [];
+      posts.forEach(function (p) { grid.appendChild(buildCard(p)); });
+    })
+    .catch(function () {});
+})();
+
 // Google reviews carousel
 (function () {
   const track = document.getElementById('reviews-track');
