@@ -118,7 +118,7 @@ nav a:hover { color: var(--gold); }
   align-items: center;
   background-size: cover;
   background-position: center;
-  background-image: linear-gradient(180deg, rgba(13,27,42,0.5), rgba(13,27,42,0.72)), url('../img/hero-living-room.jpg');
+  background-image: linear-gradient(180deg, rgba(13,27,42,0.5), rgba(13,27,42,0.72)), url('../img/hero-van.jpg');
 }
 
 .hero-grid { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; width: 100%; }
