@@ -233,11 +233,39 @@ section { padding: 90px 0; }
 .other-card {
   background: #fff;
   border: 1px solid #e6e6e6;
-  padding: 28px 20px;
+  padding: 0 0 22px;
   text-align: center;
   border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
 }
-.other-card h4 { font-family: inherit; font-size: 16px; font-weight: 700; margin: 0; }
+.other-card h4 { font-family: inherit; font-size: 16px; font-weight: 700; margin: 0; padding: 0 16px; }
+
+.other-card-img {
+  aspect-ratio: 4 / 3;
+  background: linear-gradient(135deg, var(--navy), var(--navy-light));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+  position: relative;
+  overflow: hidden;
+}
+.other-card-img img { width: 100%; height: 100%; object-fit: cover; }
+.other-card-img::after {
+  content: "Photo coming soon";
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,0.55);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.other-card-img img[style*="display: none"] ~ * { display: flex; }
+.other-card-img:has(img:not([style*="display: none"]))::after { display: none; }
 
 /* FAQ */
 .faq-item {
@@ -412,7 +440,7 @@ button.scope-trigger {
 .cta-row { display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: center; }
 
 .modal-overlay {
-  display: none;
+  display: flex;
   position: fixed;
   inset: 0;
   background: rgba(13,27,42,0.6);
@@ -420,8 +448,10 @@ button.scope-trigger {
   align-items: center;
   justify-content: center;
   padding: 24px;
+  visibility: hidden;
+  pointer-events: none;
 }
-.modal-overlay.open { display: flex; }
+.modal-overlay.open { visibility: visible; pointer-events: auto; }
 .modal-box {
   background: #fff;
   border-radius: 16px;
@@ -501,4 +531,77 @@ button.scope-trigger {
   .value-band { padding: 36px 28px; }
   .value-band-inner { flex-direction: column; align-items: flex-start; }
   .specialty-grid { grid-template-columns: 1fr; }
+}
+
+/* Motion: scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.in-view { opacity: 1; transform: translateY(0); }
+.reveal-delay-1.in-view { transition-delay: 0.08s; }
+.reveal-delay-2.in-view { transition-delay: 0.16s; }
+.reveal-delay-3.in-view { transition-delay: 0.24s; }
+.reveal-delay-4.in-view { transition-delay: 0.32s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+}
+
+/* Motion: hover lift on interactive cards */
+.why-card, .other-card, .specialty-card, .price-card {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.why-card:hover, .other-card:hover, .specialty-card:hover, .price-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(13,27,42,0.12);
+}
+
+.service-img { transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1); }
+.service-block:hover .service-img { transform: translateY(-4px); }
+
+.btn, .btn-outline, .scope-trigger, .link-arrow {
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+.btn:hover, .btn-outline:hover { transform: translateY(-2px); }
+.link-arrow:hover, .scope-trigger:hover { opacity: 0.7; }
+
+.whatsapp-float { transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); }
+.whatsapp-float:hover { transform: scale(1.08); }
+
+/* Motion: modal fade + scale */
+.modal-overlay {
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+.modal-overlay.open { opacity: 1; }
+.modal-box {
+  transform: scale(0.94) translateY(12px);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.modal-overlay.open .modal-box { transform: scale(1) translateY(0); }
+
+@media (prefers-reduced-motion: reduce) {
+  .modal-overlay, .modal-box, .why-card, .other-card, .specialty-card, .price-card, .service-img, .whatsapp-float {
+    transition: none !important;
+  }
+}
+
+/* Motion: hero entrance */
+.hero-content > * {
+  opacity: 0;
+  animation: heroIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.hero-content .eyebrow { animation-delay: 0.05s; }
+.hero-content h1 { animation-delay: 0.15s; }
+.hero-content p { animation-delay: 0.28s; }
+.hero-content .btn { animation-delay: 0.4s; }
+.hero-content .btn-outline { animation-delay: 0.46s; }
+@keyframes heroIn {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-content > * { animation: none !important; opacity: 1; }
 }
