@@ -27,8 +27,9 @@ def fetch():
         sys.exit(1)
 
     result = data["result"]
+    raw_reviews = sorted(result.get("reviews", []), key=lambda r: r.get("time", 0), reverse=True)
     reviews = []
-    for r in result.get("reviews", []):
+    for r in raw_reviews:
         text = r.get("text", "")
         if any(w in text.lower() for w in EXCLUDE_WORDS):
             continue
