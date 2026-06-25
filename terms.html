@@ -25,7 +25,7 @@
         <li><a href="/#contact">Contact</a></li>
       </ul>
     </nav>
-    <a class="nav-cta" href="https://wa.me/6590716978" target="_blank" rel="noopener">WhatsApp Us</a>
+    <button type="button" class="nav-cta quote-trigger">WhatsApp Us</button>
     <button class="menu-toggle" aria-label="Open menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
     <div class="mobile-nav">
       <ul>
@@ -36,7 +36,7 @@
         <li><a href="/#faq">FAQ</a></li>
         <li><a href="/#contact">Contact</a></li>
       </ul>
-      <a class="nav-cta" href="https://wa.me/6590716978" target="_blank" rel="noopener">WhatsApp Us</a>
+      <button type="button" class="nav-cta quote-trigger">WhatsApp Us</button>
     </div>
   </div>
 </header>
@@ -120,7 +120,7 @@
 
     <div class="price-card">
       <p style="color:#6b6b6b;font-size:15px;margin:0;">By booking with Scrubbys, you agree to the terms above. Have a question? WhatsApp us anytime.</p>
-      <a class="btn" style="margin-top:18px;" href="https://wa.me/6590716978" target="_blank" rel="noopener">WhatsApp Us</a>
+      <button type="button" class="btn quote-trigger" style="margin-top:18px;">WhatsApp Us</button>
     </div>
 
   </div>
@@ -154,7 +154,69 @@
   </div>
 </footer>
 
-<a class="whatsapp-float" href="https://wa.me/6590716978" target="_blank" rel="noopener" aria-label="WhatsApp Scrubbys SG"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.32A8.78 8.78 0 0 0 12.05 4c-4.86 0-8.82 3.95-8.82 8.81 0 1.55.41 3.06 1.18 4.39L3.2 21l3.91-1.18a8.8 8.8 0 0 0 4.93 1.49h.01c4.86 0 8.81-3.95 8.81-8.81a8.76 8.76 0 0 0-2.66-6.18zM12.05 19.7a7.3 7.3 0 0 1-3.73-1.02l-.27-.16-2.78.84.84-2.71-.18-.28a7.32 7.32 0 0 1-1.12-3.9c0-4.05 3.3-7.35 7.36-7.35a7.3 7.3 0 0 1 5.2 2.15 7.3 7.3 0 0 1 2.15 5.21c0 4.05-3.31 7.36-7.36 7.36zm4.02-5.51c-.22-.11-1.3-.64-1.5-.71-.2-.08-.35-.11-.5.11-.15.22-.57.71-.7.86-.13.15-.26.16-.48.05-.22-.11-.92-.34-1.75-1.08-.65-.58-1.08-1.29-1.21-1.51-.13-.22-.01-.34.1-.45.11-.11.25-.28.37-.42.12-.14.16-.24.25-.4.08-.16.04-.3-.02-.42-.06-.11-.55-1.33-.76-1.82-.2-.48-.41-.42-.56-.42-.14-.01-.31-.01-.47-.01-.16 0-.42.06-.64.3-.22.24-.85.83-.85 2.02s.87 2.35.99 2.51c.12.16 1.65 2.52 4 3.43 2.35.91 2.35.61 2.77.57.42-.04 1.3-.53 1.49-1.04.18-.51.18-.95.13-1.04-.06-.1-.21-.16-.43-.27z"/></svg></a>
+<button type="button" class="whatsapp-float quote-trigger" aria-label="WhatsApp Scrubbys SG"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.32A8.78 8.78 0 0 0 12.05 4c-4.86 0-8.82 3.95-8.82 8.81 0 1.55.41 3.06 1.18 4.39L3.2 21l3.91-1.18a8.8 8.8 0 0 0 4.93 1.49h.01c4.86 0 8.81-3.95 8.81-8.81a8.76 8.76 0 0 0-2.66-6.18zM12.05 19.7a7.3 7.3 0 0 1-3.73-1.02l-.27-.16-2.78.84.84-2.71-.18-.28a7.32 7.32 0 0 1-1.12-3.9c0-4.05 3.3-7.35 7.36-7.35a7.3 7.3 0 0 1 5.2 2.15 7.3 7.3 0 0 1 2.15 5.21c0 4.05-3.31 7.36-7.36 7.36zm4.02-5.51c-.22-.11-1.3-.64-1.5-.71-.2-.08-.35-.11-.5.11-.15.22-.57.71-.7.86-.13.15-.26.16-.48.05-.22-.11-.92-.34-1.75-1.08-.65-.58-1.08-1.29-1.21-1.51-.13-.22-.01-.34.1-.45.11-.11.25-.28.37-.42.12-.14.16-.24.25-.4.08-.16.04-.3-.02-.42-.06-.11-.55-1.33-.76-1.82-.2-.48-.41-.42-.56-.42-.14-.01-.31-.01-.47-.01-.16 0-.42.06-.64.3-.22.24-.85.83-.85 2.02s.87 2.35.99 2.51c.12.16 1.65 2.52 4 3.43 2.35.91 2.35.61 2.77.57.42-.04 1.3-.53 1.49-1.04.18-.51.18-.95.13-1.04-.06-.1-.21-.16-.43-.27z"/></svg></button>
+
+<div class="modal-overlay" id="modal-quote">
+  <div class="modal-box">
+    <button class="modal-close" aria-label="Close"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg></button>
+    <span class="eyebrow">Get a Quote</span>
+    <h3>Tell Us What You Need</h3>
+    <p class="modal-desc">Fill this in and send it over. We will have everything we need to give you an accurate quote, with no back and forth.</p>
+    <form class="quote-form" id="quote-form">
+      <span class="qf-label">Service(s) Needed</span>
+      <div class="quote-services">
+        <label><input type="checkbox" id="qs-postreno">Post Renovation Cleaning</label>
+        <label><input type="checkbox" id="qs-eot">End of Tenancy Cleaning</label>
+        <label><input type="checkbox" id="qs-spring">Spring Cleaning</label>
+        <label><input type="checkbox" id="qs-upholstery">Upholstery Cleaning</label>
+        <label><input type="checkbox" id="qs-floor">Floor Deep Scrub</label>
+        <label><input type="checkbox" id="qs-formaldehyde">Formaldehyde Treatment</label>
+        <label><input type="checkbox" id="qs-standalone">Oven / Window / Toilet</label>
+        <label><input type="checkbox" id="qs-commercial">Kitchen Exhaust / F&amp;B</label>
+        <label><input type="checkbox" id="qs-specialised">Chandelier / High Level</label>
+        <label><input type="checkbox" id="qs-painting">Painting</label>
+        <label><input type="checkbox" id="qs-handyman">Handyman</label>
+        <label><input type="checkbox" id="qs-marble">Marble &amp; Parquet Polishing</label>
+        <label><input type="checkbox" id="qs-aircon">Aircon Servicing</label>
+      </div>
+
+      <label class="qf-label" for="qf-property">Property Type</label>
+      <select id="qf-property">
+        <option value="">Select property type</option>
+        <option value="HDB">HDB</option>
+        <option value="Condo">Condo</option>
+        <option value="Landed">Landed</option>
+        <option value="Commercial">Commercial</option>
+      </select>
+
+      <label class="qf-label" for="qf-size">Unit Size</label>
+      <select id="qf-size">
+        <option value="">Select unit size</option>
+        <option value="300 to 599 sft">300 to 599 sft</option>
+        <option value="600 to 799 sft">600 to 799 sft</option>
+        <option value="800 to 1099 sft">800 to 1099 sft</option>
+        <option value="1100 to 1299 sft">1100 to 1299 sft</option>
+        <option value="1300 to 1599 sft">1300 to 1599 sft</option>
+        <option value="1600 to 1899 sft">1600 to 1899 sft</option>
+        <option value="Maisonette">Maisonette</option>
+        <option value="Landed or Commercial">Landed or Commercial, needs site inspection</option>
+        <option value="Not sure">Not sure</option>
+      </select>
+
+      <label class="qf-label" for="qf-date">Preferred Date (Optional)</label>
+      <input type="date" id="qf-date">
+
+      <label class="qf-label" for="qf-name">Name</label>
+      <input type="text" id="qf-name" placeholder="Your name">
+
+      <label class="qf-label" for="qf-postal">Postal Code or Area (Optional)</label>
+      <input type="text" id="qf-postal" placeholder="e.g. 408731 or Tampines">
+
+      <button type="submit" class="btn">Send via WhatsApp</button>
+      <p class="qf-hint">This opens WhatsApp with your details filled in. You can edit before sending.</p>
+    </form>
+  </div>
+</div>
 
 <script src="assets/js/main.js"></script>
 </body>

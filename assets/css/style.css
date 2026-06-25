@@ -223,6 +223,7 @@ section { padding: 90px 0; }
 .service-list li span:last-child { color: var(--gold); font-weight: 700; }
 
 .link-arrow { font-weight: 700; font-size: 14px; color: var(--navy); border-bottom: 2px solid var(--gold); padding-bottom: 2px; }
+button.link-arrow { background: none; border: none; border-bottom: 2px solid var(--gold); padding: 0 0 2px; }
 
 /* Other services grid */
 .other-grid {
@@ -499,8 +500,24 @@ button.scope-trigger {
 .modal-box ul.scope-list.exclude li::before { content: "\2715"; color: #c0392b; }
 .modal-box .modal-cta { margin-top: 28px; }
 
+/* Quote form */
+.quote-form .qf-label { display: block; font-family: "Inter", sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: var(--text); margin: 22px 0 10px; }
+.quote-form .qf-label:first-child { margin-top: 0; }
+.quote-services { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 14px; }
+.quote-services label { display: flex; align-items: center; gap: 8px; font-size: 14.5px; color: var(--text); padding: 6px 0; cursor: pointer; }
+.quote-services input[type="checkbox"] { width: 16px; height: 16px; accent-color: var(--gold); flex-shrink: 0; }
+.quote-form select, .quote-form input[type="text"], .quote-form input[type="date"] {
+  width: 100%; padding: 12px 14px; border: 1px solid #ddd; border-radius: 8px;
+  font-family: "Inter", sans-serif; font-size: 14.5px; color: var(--text); background: #fff;
+}
+.quote-form select:focus, .quote-form input:focus { outline: none; border-color: var(--gold); }
+.quote-form button[type="submit"] { width: 100%; margin-top: 26px; border: none; cursor: pointer; font-family: "Inter", sans-serif; }
+.quote-form .qf-hint { font-size: 13px; color: var(--muted); margin-top: 6px; }
+button.quote-trigger { border: none; cursor: pointer; font-family: "Inter", sans-serif; -webkit-appearance: none; appearance: none; }
+
 @media (max-width: 480px) {
   .modal-box { padding: 28px 22px; }
+  .quote-services { grid-template-columns: 1fr; }
 }
 
 /* Draft layout additions: value band + specialty grid (breaks up repeated split layout) */

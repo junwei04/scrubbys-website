@@ -11,7 +11,7 @@
     const isOpen = mobileNav.classList.toggle('open');
     menuToggle.innerHTML = isOpen ? iconClose : iconHamburger;
   });
-  mobileNav.querySelectorAll('a').forEach(function (link) {
+  mobileNav.querySelectorAll('a, button').forEach(function (link) {
     link.addEventListener('click', function () {
       mobileNav.classList.remove('open');
       menuToggle.innerHTML = iconHamburger;
@@ -41,6 +41,75 @@
       document.querySelectorAll('.modal-overlay.open').forEach(function (m) { m.classList.remove('open'); });
     }
   });
+})();
+
+// Quote form (Book Now / WhatsApp Us triggers)
+(function () {
+  const quoteModal = document.getElementById('modal-quote');
+  if (!quoteModal) return;
+  const form = document.getElementById('quote-form');
+
+  const SERVICE_LABELS = {
+    postreno: 'Post Renovation Cleaning',
+    eot: 'End of Tenancy Cleaning',
+    spring: 'Spring Cleaning',
+    upholstery: 'Upholstery Cleaning',
+    floor: 'Floor Deep Scrub',
+    formaldehyde: 'Formaldehyde Treatment',
+    standalone: 'Oven / Window / Toilet',
+    commercial: 'Kitchen Exhaust / F&B',
+    specialised: 'Chandelier / High Level',
+    painting: 'Painting',
+    handyman: 'Handyman',
+    marble: 'Marble & Parquet Polishing',
+    aircon: 'Aircon Servicing'
+  };
+
+  function openQuoteModal(presetService) {
+    document.querySelectorAll('.modal-overlay.open').forEach(function (m) { m.classList.remove('open'); });
+    if (presetService) {
+      const cb = document.getElementById('qs-' + presetService);
+      if (cb) cb.checked = true;
+    }
+    quoteModal.classList.add('open');
+  }
+
+  document.querySelectorAll('.quote-trigger').forEach(function (el) {
+    el.addEventListener('click', function () {
+      openQuoteModal(el.dataset.service || null);
+    });
+  });
+
+  if (form) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const services = Object.keys(SERVICE_LABELS)
+        .filter(function (key) {
+          const cb = document.getElementById('qs-' + key);
+          return cb && cb.checked;
+        })
+        .map(function (key) { return SERVICE_LABELS[key]; });
+
+      const property = document.getElementById('qf-property').value;
+      const size = document.getElementById('qf-size').value;
+      const date = document.getElementById('qf-date').value;
+      const name = document.getElementById('qf-name').value.trim();
+      const postal = document.getElementById('qf-postal').value.trim();
+
+      const lines = ['Hi Scrubbys, I would like a quote.'];
+      lines.push('Service(s): ' + (services.length ? services.join(', ') : 'Not sure yet, please advise'));
+      if (property) lines.push('Property Type: ' + property);
+      if (size) lines.push('Unit Size: ' + size);
+      if (date) lines.push('Preferred Date: ' + date);
+      if (name) lines.push('Name: ' + name);
+      if (postal) lines.push('Postal Code / Area: ' + postal);
+
+      const text = encodeURIComponent(lines.join('\n'));
+      window.open('https://wa.me/6590716978?text=' + text, '_blank', 'noopener');
+      quoteModal.classList.remove('open');
+      form.reset();
+    });
+  }
 })();
 
 // Google reviews carousel
