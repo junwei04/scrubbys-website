@@ -43,6 +43,45 @@
   });
 })();
 
+// Google reviews carousel
+(function () {
+  const track = document.getElementById('reviews-track');
+  if (!track) return;
+
+  const starSvg = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>';
+
+  function initials(name) {
+    return (name || '?').trim().charAt(0).toUpperCase();
+  }
+
+  function buildCard(r) {
+    const card = document.createElement('div');
+    card.className = 'review-card-mini';
+    const stars = starSvg.repeat(r.rating || 5);
+    const avatar = r.photo
+      ? '<img src="' + r.photo + '" alt="" referrerpolicy="no-referrer" onerror="this.parentElement.textContent=\'' + initials(r.name) + '\';this.parentElement.style.display=\'flex\';this.parentElement.style.alignItems=\'center\';this.parentElement.style.justifyContent=\'center\';">'
+      : initials(r.name);
+    card.innerHTML =
+      '<div class="review-head">' +
+        '<div class="review-avatar">' + avatar + '</div>' +
+        '<div class="who"><span class="name">' + r.name + '</span><span class="src">Google Review</span></div>' +
+      '</div>' +
+      '<div class="reviews-stars" style="font-size:14px;">' + stars + '</div>' +
+      '<p>"' + r.text + '"</p>';
+    return card;
+  }
+
+  fetch('assets/data/reviews.json')
+    .then(function (res) { return res.json(); })
+    .then(function (data) {
+      const reviews = data.reviews || [];
+      if (!reviews.length) return;
+      reviews.forEach(function (r) { track.appendChild(buildCard(r)); });
+      reviews.forEach(function (r) { track.appendChild(buildCard(r)); });
+    })
+    .catch(function () {});
+})();
+
 // Scroll reveal (respects prefers-reduced-motion)
 (function () {
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
