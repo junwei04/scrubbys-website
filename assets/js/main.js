@@ -194,6 +194,13 @@
       reviews.forEach(function (r) { track.appendChild(buildCard(r)); });
     })
     .catch(function () {});
+
+  // Tap to pause/resume on touch devices, since hover never fires there
+  let touchPaused = false;
+  track.addEventListener('touchstart', function () {
+    touchPaused = !touchPaused;
+    track.classList.toggle('paused', touchPaused);
+  }, { passive: true });
 })();
 
 // Scroll reveal (respects prefers-reduced-motion)
