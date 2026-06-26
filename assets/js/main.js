@@ -1,3 +1,10 @@
+// Service worker: caches static assets so repeat visits load instantly
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function () {
+    navigator.serviceWorker.register('sw.js').catch(function () {});
+  });
+}
+
 // Mobile nav toggle
 (function () {
   const menuToggle = document.querySelector('.menu-toggle');
