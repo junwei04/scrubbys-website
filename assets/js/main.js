@@ -12,9 +12,28 @@
     menuToggle.innerHTML = isOpen ? iconClose : iconHamburger;
   });
   mobileNav.querySelectorAll('a, button').forEach(function (link) {
-    link.addEventListener('click', function () {
+    link.addEventListener('click', function (e) {
+      const href = link.getAttribute('href') || '';
+      const isSamePageAnchor = href.charAt(0) === '#';
+      let target = null;
+      if (isSamePageAnchor) {
+        target = document.querySelector(href);
+      }
+
       mobileNav.classList.remove('open');
       menuToggle.innerHTML = iconHamburger;
+
+      if (target) {
+        // Closing the menu reflows the page; wait for that before scrolling,
+        // otherwise the browser's native anchor jump lands in the wrong spot.
+        e.preventDefault();
+        requestAnimationFrame(function () {
+          requestAnimationFrame(function () {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            history.pushState(null, '', href);
+          });
+        });
+      }
     });
   });
 })();
