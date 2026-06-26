@@ -24,15 +24,13 @@
       menuToggle.innerHTML = iconHamburger;
 
       if (target) {
-        // Closing the menu reflows the page; wait for that before scrolling,
-        // otherwise the browser's native anchor jump lands in the wrong spot.
+        // Hiding the menu mid-click can cancel the browser's native anchor jump,
+        // so prevent it and scroll manually once the menu has actually closed.
         e.preventDefault();
-        requestAnimationFrame(function () {
-          requestAnimationFrame(function () {
-            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            history.pushState(null, '', href);
-          });
-        });
+        setTimeout(function () {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          history.pushState(null, '', href);
+        }, 50);
       }
     });
   });
