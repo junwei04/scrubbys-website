@@ -270,6 +270,9 @@ if ('serviceWorker' in navigator) {
     const reviews = (results[0].reviews || []).concat(results[1].reviews || []);
     if (!reviews.length) { showFallback(); return; }
     reviews.forEach(function (r) { track.appendChild(buildCard(r)); });
+    // Duplicate the set so the desktop auto-scroll loop reads as seamless.
+    // Harmless on mobile too, swiping just continues into the same reviews again.
+    reviews.forEach(function (r) { track.appendChild(buildCard(r)); });
   }).catch(showFallback);
 })();
 
