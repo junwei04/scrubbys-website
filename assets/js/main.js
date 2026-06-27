@@ -257,15 +257,15 @@ if ('serviceWorker' in navigator) {
     track.innerHTML = '<p style="padding:12px 0;color:var(--muted);">Reviews are taking a moment to load. <a href="https://g.page/r/CcmQSQSwAxvnEBM/review" target="_blank" rel="noopener" style="color:var(--gold);font-weight:700;">View them on Google &rarr;</a></p>';
   }
 
-  fetch('assets/data/reviews.json')
-    .then(function (res) { return res.json(); })
-    .then(function (data) {
-      const reviews = data.reviews || [];
-      if (!reviews.length) { showFallback(); return; }
-      reviews.forEach(function (r) { track.appendChild(buildCard(r)); });
-      reviews.forEach(function (r) { track.appendChild(buildCard(r)); });
-    })
-    .catch(showFallback);
+  Promise.all([
+    fetch('assets/data/reviews.json').then(function (res) { return res.json(); }).catch(function () { return { reviews: [] }; }),
+    fetch('assets/data/extra-reviews.json').then(function (res) { return res.json(); }).catch(function () { return { reviews: [] }; })
+  ]).then(function (results) {
+    const reviews = (results[0].reviews || []).concat(results[1].reviews || []);
+    if (!reviews.length) { showFallback(); return; }
+    reviews.forEach(function (r) { track.appendChild(buildCard(r)); });
+    reviews.forEach(function (r) { track.appendChild(buildCard(r)); });
+  }).catch(showFallback);
 
   // Tap to pause/resume on touch devices, since hover never fires there
   let touchPaused = false;
