@@ -419,8 +419,9 @@ button.link-arrow { background: none; border: none; border-bottom: 2px solid var
 footer { background: var(--navy); color: rgba(255,255,255,0.85); padding: 70px 0 30px; }
 .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 40px; margin-bottom: 50px; }
 .footer-grid h4 { font-family: "Inter", sans-serif; color: #fff; font-size: 14px; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 18px; }
-.footer-grid p, .footer-grid a { font-size: 15px; display: block; margin-bottom: 10px; color: rgba(255,255,255,0.75); }
+.footer-grid p, .footer-grid a { font-size: 15px; display: block; margin-bottom: 10px; color: rgba(255,255,255,0.75); line-height: 1.5; }
 .footer-grid a:hover { color: var(--gold); }
+.footer-legal { font-size: 12.5px !important; color: rgba(255,255,255,0.45) !important; margin-top: 16px !important; letter-spacing: 0.02em; }
 .footer-bottom { border-top: 1px solid rgba(255,255,255,0.12); padding-top: 24px; font-size: 13px; color: rgba(255,255,255,0.5); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
 
 .whatsapp-float {
