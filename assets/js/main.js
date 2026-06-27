@@ -215,7 +215,7 @@ if ('serviceWorker' in navigator) {
     grid.innerHTML = '<p style="padding:12px 0;color:var(--muted);grid-column:1/-1;">Posts are taking a moment to load. <a href="https://www.instagram.com/scrubbys_sg" target="_blank" rel="noopener" style="color:var(--gold);font-weight:700;">View on Instagram &rarr;</a></p>';
   }
 
-  fetch('assets/data/instagram.json')
+  fetch('assets/data/instagram.json', { cache: 'no-store' })
     .then(function (res) { return res.json(); })
     .then(function (data) {
       const posts = data.posts || [];
@@ -258,8 +258,8 @@ if ('serviceWorker' in navigator) {
   }
 
   Promise.all([
-    fetch('assets/data/reviews.json').then(function (res) { return res.json(); }).catch(function () { return { reviews: [] }; }),
-    fetch('assets/data/extra-reviews.json').then(function (res) { return res.json(); }).catch(function () { return { reviews: [] }; })
+    fetch('assets/data/reviews.json', { cache: 'no-store' }).then(function (res) { return res.json(); }).catch(function () { return { reviews: [] }; }),
+    fetch('assets/data/extra-reviews.json', { cache: 'no-store' }).then(function (res) { return res.json(); }).catch(function () { return { reviews: [] }; })
   ]).then(function (results) {
     const reviews = (results[0].reviews || []).concat(results[1].reviews || []);
     if (!reviews.length) { showFallback(); return; }
