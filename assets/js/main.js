@@ -5,10 +5,23 @@ if (location.hash) {
   window.addEventListener('load', function () {
     setTimeout(function () {
       const target = document.querySelector(location.hash);
-      if (target) target.scrollIntoView({ block: 'start' });
+      if (target) {
+        if (target.tagName === 'DETAILS') target.open = true;
+        target.scrollIntoView({ block: 'start' });
+      }
     }, 100);
   });
 }
+
+// Open a FAQ accordion item when linked to directly (e.g. clicking the
+// "Post Reno or Pre Move In?" icon under Services while already on the page).
+window.addEventListener('hashchange', function () {
+  const target = document.querySelector(location.hash);
+  if (target && target.tagName === 'DETAILS') {
+    target.open = true;
+    target.scrollIntoView({ block: 'start' });
+  }
+});
 
 // Remove the service worker. It caused content to go stale and show
 // inconsistently between visits, which isn't worth the minor speed gain.
