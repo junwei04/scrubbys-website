@@ -524,7 +524,7 @@ button.scope-trigger {
 
 /* Quote form */
 .quote-form .qf-label { display: block; font-family: "Inter", sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: var(--text); margin: 22px 0 10px; }
-.quote-form .qf-label:first-child { margin-top: 0; }
+.quote-form > .qf-label:first-child { margin-top: 0; }
 .quote-services { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 14px; }
 .quote-services label { display: flex; align-items: center; gap: 8px; font-size: 14.5px; color: var(--text); padding: 6px 0; cursor: pointer; }
 .quote-services input[type="checkbox"] { width: 16px; height: 16px; accent-color: var(--gold); flex-shrink: 0; }

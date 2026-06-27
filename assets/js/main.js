@@ -243,5 +243,16 @@ if ('serviceWorker' in navigator) {
       }
     });
   }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
-  items.forEach(function (el) { observer.observe(el); });
+
+  // Anything already visible on first paint should just be there, not visibly
+  // fade/slide in piece by piece — only animate content the user scrolls to.
+  items.forEach(function (el) {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+      el.style.transition = 'none';
+      el.classList.add('in-view');
+    } else {
+      observer.observe(el);
+    }
+  });
 })();
