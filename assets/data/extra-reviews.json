@@ -1,3 +1,10 @@
 {
-  "reviews": []
+  "reviews": [
+    {
+      "name": "Joanne Chua",
+      "photo": null,
+      "rating": 5,
+      "text": "Scrubbys staff were amazingly thorough! They cleaned the entire 3 bedroom condo from top to bottom and even took apart the oven to clean all the crevices. They steamed the floors and curtains as well. No corner was left untouched. Communication was smooth and a pleasant experience. Would recommend!"
+    }
+  ]
 }
