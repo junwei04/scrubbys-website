@@ -181,8 +181,13 @@
     <h3>Tell Us What You Need</h3>
     <p class="modal-desc">Fill this in and send it over. We will have everything we need to give you an accurate quote, with no back and forth.</p>
     <form class="quote-form" id="quote-form">
-      <span class="qf-label">Service(s) Needed</span>
-      <div class="quote-services">
+      <label class="qf-consult">
+        <input type="checkbox" id="qf-unsure">
+        <span>Not sure what you need? Check this and we will recommend a service for you, free of charge.</span>
+      </label>
+
+      <span class="qf-label" id="qf-services-label">Service(s) Needed</span>
+      <div class="quote-services" id="qf-services-block">
         <label><input type="checkbox" id="qs-postreno">Post Renovation Cleaning</label>
         <label><input type="checkbox" id="qs-eot">End of Tenancy Cleaning</label>
         <label><input type="checkbox" id="qs-spring">Spring Cleaning</label>

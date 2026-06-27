@@ -89,18 +89,25 @@ if ('serviceWorker' in navigator) {
     aircon: 'Aircon Servicing'
   };
 
-  function openQuoteModal(presetService) {
+  function openQuoteModal(presetService, presetConsult) {
     document.querySelectorAll('.modal-overlay.open').forEach(function (m) { m.classList.remove('open'); });
     if (presetService) {
       const cb = document.getElementById('qs-' + presetService);
       if (cb) cb.checked = true;
+    }
+    if (presetConsult) {
+      const unsure = document.getElementById('qf-unsure');
+      if (unsure) {
+        unsure.checked = true;
+        unsure.dispatchEvent(new Event('change'));
+      }
     }
     quoteModal.classList.add('open');
   }
 
   document.querySelectorAll('.quote-trigger').forEach(function (el) {
     el.addEventListener('click', function () {
-      openQuoteModal(el.dataset.service || null);
+      openQuoteModal(el.dataset.service || null, el.dataset.consult === 'true');
     });
   });
 
@@ -113,10 +120,25 @@ if ('serviceWorker' in navigator) {
     });
   }
 
+  const unsureCheckbox = document.getElementById('qf-unsure');
+  const servicesBlock = document.getElementById('qf-services-block');
+  const servicesLabel = document.getElementById('qf-services-label');
+  if (unsureCheckbox && servicesBlock) {
+    unsureCheckbox.addEventListener('change', function () {
+      const isUnsure = unsureCheckbox.checked;
+      servicesBlock.classList.toggle('is-disabled', isUnsure);
+      servicesLabel.classList.toggle('is-disabled', isUnsure);
+      if (isUnsure) {
+        servicesBlock.querySelectorAll('input[type="checkbox"]').forEach(function (cb) { cb.checked = false; });
+      }
+    });
+  }
+
   if (form) {
     form.addEventListener('submit', function (e) {
       e.preventDefault();
-      const services = Object.keys(SERVICE_LABELS)
+      const wantsConsult = unsureCheckbox && unsureCheckbox.checked;
+      const services = wantsConsult ? [] : Object.keys(SERVICE_LABELS)
         .filter(function (key) {
           const cb = document.getElementById('qs-' + key);
           return cb && cb.checked;
@@ -130,8 +152,12 @@ if ('serviceWorker' in navigator) {
       const name = document.getElementById('qf-name').value.trim();
       const postal = document.getElementById('qf-postal').value.trim();
 
-      const lines = ['Hi Scrubbys, I would like a quote.'];
-      lines.push('Service(s): ' + (services.length ? services.join(', ') : 'Not sure yet, please advise'));
+      const lines = wantsConsult
+        ? ['Hi Scrubbys, I am not sure which service I need. Could I get a free consultation?']
+        : ['Hi Scrubbys, I would like a quote.'];
+      if (!wantsConsult) {
+        lines.push('Service(s): ' + (services.length ? services.join(', ') : 'Not sure yet, please advise'));
+      }
       if (property) lines.push('Property Type: ' + property);
       if (property === 'Condo' && bedrooms) lines.push('Number of Bedrooms: ' + bedrooms);
       if (size) lines.push('Unit Size: ' + size);
@@ -143,6 +169,7 @@ if ('serviceWorker' in navigator) {
       window.open('https://wa.me/6590716978?text=' + text, '_blank', 'noopener');
       quoteModal.classList.remove('open');
       form.reset();
+      if (servicesBlock) { servicesBlock.classList.remove('is-disabled'); servicesLabel.classList.remove('is-disabled'); }
     });
   }
 })();
@@ -172,13 +199,18 @@ if ('serviceWorker' in navigator) {
     return a;
   }
 
+  function showFallback() {
+    grid.innerHTML = '<p style="padding:12px 0;color:var(--muted);grid-column:1/-1;">Posts are taking a moment to load. <a href="https://www.instagram.com/scrubbys_sg" target="_blank" rel="noopener" style="color:var(--gold);font-weight:700;">View on Instagram &rarr;</a></p>';
+  }
+
   fetch('assets/data/instagram.json')
     .then(function (res) { return res.json(); })
     .then(function (data) {
       const posts = data.posts || [];
+      if (!posts.length) { showFallback(); return; }
       posts.forEach(function (p) { grid.appendChild(buildCard(p)); });
     })
-    .catch(function () {});
+    .catch(showFallback);
 })();
 
 // Google reviews carousel
@@ -209,15 +241,19 @@ if ('serviceWorker' in navigator) {
     return card;
   }
 
+  function showFallback() {
+    track.innerHTML = '<p style="padding:12px 0;color:var(--muted);">Reviews are taking a moment to load. <a href="https://g.page/r/CcmQSQSwAxvnEBM/review" target="_blank" rel="noopener" style="color:var(--gold);font-weight:700;">View them on Google &rarr;</a></p>';
+  }
+
   fetch('assets/data/reviews.json')
     .then(function (res) { return res.json(); })
     .then(function (data) {
       const reviews = data.reviews || [];
-      if (!reviews.length) return;
+      if (!reviews.length) { showFallback(); return; }
       reviews.forEach(function (r) { track.appendChild(buildCard(r)); });
       reviews.forEach(function (r) { track.appendChild(buildCard(r)); });
     })
-    .catch(function () {});
+    .catch(showFallback);
 
   // Tap to pause/resume on touch devices, since hover never fires there
   let touchPaused = false;

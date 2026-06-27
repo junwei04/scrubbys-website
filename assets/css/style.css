@@ -561,6 +561,14 @@ button.scope-trigger {
 .quote-form select:focus, .quote-form input:focus { outline: none; border-color: var(--gold); }
 .quote-form button[type="submit"] { width: 100%; margin-top: 26px; border: none; cursor: pointer; font-family: "Inter", sans-serif; }
 .quote-form .qf-hint { font-size: 13px; color: var(--muted); margin-top: 6px; }
+.qf-consult {
+  display: flex; align-items: flex-start; gap: 10px; cursor: pointer;
+  background: var(--cream); border: 1px solid #ece4cf; border-radius: 10px;
+  padding: 14px 16px; font-size: 14px; color: var(--text); line-height: 1.4;
+}
+.qf-consult input[type="checkbox"] { width: 17px; height: 17px; margin-top: 1px; accent-color: var(--gold); flex-shrink: 0; }
+.quote-services.is-disabled { opacity: 0.4; pointer-events: none; }
+#qf-services-label.is-disabled { opacity: 0.4; }
 button.quote-trigger { border: none; cursor: pointer; font-family: "Inter", sans-serif; -webkit-appearance: none; appearance: none; }
 
 @media (max-width: 480px) {
