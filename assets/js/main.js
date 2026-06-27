@@ -10,11 +10,17 @@ if (location.hash) {
   });
 }
 
-// Service worker: caches static assets so repeat visits load instantly
+// Remove the service worker. It caused content to go stale and show
+// inconsistently between visits, which isn't worth the minor speed gain.
 if ('serviceWorker' in navigator) {
-  window.addEventListener('load', function () {
-    navigator.serviceWorker.register('sw.js').catch(function () {});
+  navigator.serviceWorker.getRegistrations().then(function (regs) {
+    regs.forEach(function (reg) { reg.unregister(); });
   });
+  if (window.caches) {
+    caches.keys().then(function (names) {
+      names.forEach(function (name) { caches.delete(name); });
+    });
+  }
 }
 
 // Mobile nav toggle
@@ -264,16 +270,7 @@ if ('serviceWorker' in navigator) {
     const reviews = (results[0].reviews || []).concat(results[1].reviews || []);
     if (!reviews.length) { showFallback(); return; }
     reviews.forEach(function (r) { track.appendChild(buildCard(r)); });
-    reviews.forEach(function (r) { track.appendChild(buildCard(r)); });
   }).catch(showFallback);
-
-  // Tap to pause/resume on touch devices, since hover never fires there.
-  // Uses "click" (not touchstart) so a scroll swipe never gets mistaken for a tap.
-  let touchPaused = false;
-  track.addEventListener('click', function () {
-    touchPaused = !touchPaused;
-    track.classList.toggle('paused', touchPaused);
-  });
 })();
 
 // Scroll reveal (respects prefers-reduced-motion)
