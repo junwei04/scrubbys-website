@@ -267,12 +267,13 @@ if ('serviceWorker' in navigator) {
     reviews.forEach(function (r) { track.appendChild(buildCard(r)); });
   }).catch(showFallback);
 
-  // Tap to pause/resume on touch devices, since hover never fires there
+  // Tap to pause/resume on touch devices, since hover never fires there.
+  // Uses "click" (not touchstart) so a scroll swipe never gets mistaken for a tap.
   let touchPaused = false;
-  track.addEventListener('touchstart', function () {
+  track.addEventListener('click', function () {
     touchPaused = !touchPaused;
     track.classList.toggle('paused', touchPaused);
-  }, { passive: true });
+  });
 })();
 
 // Scroll reveal (respects prefers-reduced-motion)
