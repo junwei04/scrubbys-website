@@ -1,4 +1,4 @@
-const RUNTIME_CACHE = 'scrubbys-runtime-v2';
+const RUNTIME_CACHE = 'scrubbys-runtime-v3';
 
 self.addEventListener('install', function () {
   self.skipWaiting();
