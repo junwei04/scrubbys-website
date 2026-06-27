@@ -94,6 +94,7 @@ if ('serviceWorker' in navigator) {
   const SERVICE_LABELS = {
     postreno: 'Post Renovation Cleaning',
     eot: 'End of Tenancy Cleaning',
+    premovein: 'Pre Move In Cleaning',
     spring: 'Spring Cleaning',
     upholstery: 'Upholstery Cleaning',
     floor: 'Floor Deep Scrub',
