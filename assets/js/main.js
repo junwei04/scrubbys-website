@@ -1,3 +1,15 @@
+// Re-correct anchor scroll after the page fully settles. Web fonts swapping in
+// after the browser's initial jump can resize headings and shift everything
+// below, leaving the page scrolled to the wrong spot by the time fonts load.
+if (location.hash) {
+  window.addEventListener('load', function () {
+    setTimeout(function () {
+      const target = document.querySelector(location.hash);
+      if (target) target.scrollIntoView({ block: 'start' });
+    }, 100);
+  });
+}
+
 // Service worker: caches static assets so repeat visits load instantly
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', function () {
