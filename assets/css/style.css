@@ -561,6 +561,10 @@ button.scope-trigger {
 .modal-box ul.scope-list li::before { content: "\2713"; position: absolute; left: 0; color: var(--gold); font-weight: 700; }
 .modal-box ul.scope-list.exclude li::before { content: "\2715"; color: #c0392b; }
 .modal-box .modal-cta { margin-top: 28px; }
+.modal-box .modal-note { background: #fdf2f0; border: 1px solid #f0d6d2; border-radius: 8px; padding: 12px 14px; font-size: 14px; color: #8a3a30; margin-bottom: 24px; }
+.modal-box .modal-note strong { color: #c0392b; }
+.price-card .price-note { background: #fdf2f0; border: 1px solid #f0d6d2; border-radius: 8px; padding: 10px 14px; font-size: 14px; color: #8a3a30; margin-top: 12px; }
+.price-card .price-note strong { color: #c0392b; }
 
 /* Quote form */
 .quote-form .qf-label { display: block; font-family: "Inter", sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: var(--text); margin: 22px 0 10px; }
