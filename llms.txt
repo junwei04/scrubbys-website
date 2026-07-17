@@ -39,5 +39,9 @@ This applies to Post Renovation Cleaning, End of Tenancy Cleaning, Spring Cleani
 
 ## Pages
 - [Home](https://www.scrubbys.sg/): Services overview, about, reviews, FAQ
+- [Post Renovation Cleaning](https://www.scrubbys.sg/post-renovation-cleaning.html): Full service details, checklist, pricing, FAQ
+- [End of Tenancy Cleaning](https://www.scrubbys.sg/end-of-tenancy-cleaning.html): Full service details, checklist, pricing, FAQ
+- [Pre Move In Cleaning](https://www.scrubbys.sg/pre-move-in-cleaning.html): Full service details, checklist, pricing, FAQ
+- [Spring Cleaning](https://www.scrubbys.sg/spring-cleaning.html): Full service details, checklist, pricing, FAQ
 - [Pricing](https://www.scrubbys.sg/pricelist.html): Full price list by service and unit size, condo bedroom guide
 - [Booking & Service Terms](https://www.scrubbys.sg/terms.html): Deposit, rescheduling, cancellation, and liability terms
