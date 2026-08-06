@@ -34,6 +34,72 @@ img { max-width: 100%; display: block; }
   padding: 0 24px;
 }
 
+/* Announcement bar */
+.announcement-bar {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(90deg, #b88f1e, var(--gold) 35%, #f0d878 50%, var(--gold) 65%, #b88f1e);
+  background-size: 200% 100%;
+  animation: announcement-gradient 6s ease-in-out infinite;
+  color: var(--navy);
+  padding: 13px 24px;
+  font-size: 15px;
+  font-weight: 700;
+  text-align: center;
+}
+.announcement-bar::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -60%;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.65), transparent);
+  animation: announcement-shimmer 3.2s ease-in-out infinite;
+  pointer-events: none;
+}
+@keyframes announcement-gradient {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+@keyframes announcement-shimmer {
+  0% { left: -60%; }
+  55% { left: 130%; }
+  100% { left: 130%; }
+}
+.announcement-bar .announcement-inner {
+  position: relative;
+  z-index: 2;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.announcement-coin {
+  height: 30px;
+  width: auto;
+  animation: announcement-coin-bounce 2.2s ease-in-out infinite;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.25));
+}
+@keyframes announcement-coin-bounce {
+  0%, 100% { transform: translateY(0) rotate(-6deg); }
+  50% { transform: translateY(-5px) rotate(10deg); }
+}
+.announcement-yuu-logo { height: 20px; width: auto; }
+@media (max-width: 560px) {
+  .announcement-bar { font-size: 12.5px; padding: 10px 16px; }
+  .announcement-yuu-logo { height: 16px; }
+  .announcement-coin { height: 24px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .announcement-bar, .announcement-bar::after, .announcement-coin {
+    animation: none;
+  }
+}
+
 /* Header */
 header {
   position: sticky;
