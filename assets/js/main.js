@@ -282,6 +282,13 @@ if ('serviceWorker' in navigator) {
     fetch('assets/data/extra-reviews.json', { cache: 'no-store' }).then(function (res) { return res.json(); }).catch(function () { return { reviews: [] }; })
   ]).then(function (results) {
     const reviews = (results[0].reviews || []).concat(results[1].reviews || []);
+    // Keep the headline rating and review count in sync with the daily Google fetch,
+    // so the number never goes stale as reviews come in.
+    const meta = results[0] || {};
+    const countEl = document.querySelector('.reviews-banner .count');
+    if (countEl && meta.total) countEl.textContent = meta.total + ' Google reviews';
+    const scoreEl = document.querySelector('.reviews-banner .score');
+    if (scoreEl && meta.rating) scoreEl.textContent = meta.rating;
     if (!reviews.length) { showFallback(); return; }
     reviews.forEach(function (r) { track.appendChild(buildCard(r)); });
     // Duplicate the set so the desktop auto-scroll loop reads as seamless.
