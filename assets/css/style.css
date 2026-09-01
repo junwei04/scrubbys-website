@@ -38,6 +38,8 @@ img { max-width: 100%; display: block; }
 .announcement-bar {
   position: relative;
   overflow: hidden;
+  display: block;
+  width: 100%;
   background: linear-gradient(90deg, #b88f1e, var(--gold) 35%, #f0d878 50%, var(--gold) 65%, #b88f1e);
   background-size: 200% 100%;
   animation: announcement-gradient 6s ease-in-out infinite;
@@ -46,7 +48,10 @@ img { max-width: 100%; display: block; }
   font-size: 15px;
   font-weight: 700;
   text-align: center;
+  text-decoration: none;
+  cursor: pointer;
 }
+.announcement-bar:hover { filter: brightness(1.04); }
 .announcement-bar::after {
   content: "";
   position: absolute;
@@ -440,6 +445,31 @@ button.link-arrow { background: none; border: none; border-bottom: 2px solid var
 }
 @media (max-width: 560px) {
   .review-card-mini { flex-basis: 82vw; padding: 22px 20px; }
+}
+
+/* yuu Rewards */
+.yuu-rewards { background: var(--navy); color: #fff; }
+.yuu-rewards .section-head .eyebrow { color: var(--gold); }
+.yuu-rewards .section-head h2 { color: #fff; }
+.yuu-rewards .section-head p { color: rgba(255,255,255,0.75); }
+.yuu-rewards-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 48px; align-items: center; }
+.yuu-steps { display: flex; flex-direction: column; gap: 24px; }
+.yuu-step { display: flex; gap: 16px; align-items: flex-start; }
+.yuu-step .num {
+  width: 36px; height: 36px; border-radius: 50%;
+  background: var(--gold); color: var(--navy);
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: 15px; flex-shrink: 0;
+}
+.yuu-step h3 { font-family: "Inter", sans-serif; font-size: 16px; margin-bottom: 4px; }
+.yuu-step p { font-size: 14px; color: rgba(255,255,255,0.7); line-height: 1.6; }
+.yuu-cta-card { background: var(--cream); border-radius: 20px; padding: 40px 36px; text-align: center; color: var(--navy); }
+.yuu-cta-card img.qr { width: 180px; height: 180px; margin: 0 auto 18px; display: block; }
+.yuu-cta-card .yuu-logo-small { height: 22px; width: auto; margin: 0 auto 16px; display: block; }
+.yuu-cta-card .btn { margin-top: 18px; width: 100%; text-align: center; }
+.yuu-cta-card .fine { font-size: 12.5px; color: var(--muted); margin-top: 14px; }
+@media (max-width: 860px) {
+  .yuu-rewards-grid { grid-template-columns: 1fr; }
 }
 
 /* Instagram feed */
