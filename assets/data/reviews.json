@@ -3,13 +3,6 @@
   "total": 123,
   "reviews": [
     {
-      "name": "Dyon Lee",
-      "photo": "https://lh3.googleusercontent.com/a/ACg8ocKthWiJ-qH8uuVBz20LJT1vUoyr-sdciB8vAjM6JXyKkx28-Q=s128-c0x00000000-cc-rp-mo",
-      "rating": 5,
-      "text": "My first time engaging the service from Scrubbys, and I am totally amazed by the service. Moving in to apartment and wanted to have a thorough clean of the house, and came back few hours to a very bright shining clean house. Perfectionist, even to the last minute, they were still looking for tiny dirts that I could not even spot myself while concluding the checks. Salutes to the team for excellent service. Please consider them in any of your cleaning requirements",
-      "relative_time": "2 months ago"
-    },
-    {
       "name": "Joanne Chua",
       "photo": "https://lh3.googleusercontent.com/a-/ALV-UjW6halCEmj4nWdi11ud9GmVcNwT0Qtplu8I0lg_KCXCTf04S7fBRg=s128-c0x00000000-cc-rp-mo-ba2",
       "rating": 5,
@@ -17,18 +10,25 @@
       "relative_time": "2 months ago"
     },
     {
-      "name": "Anita Loh",
-      "photo": "https://lh3.googleusercontent.com/a-/ALV-UjWnYbV4ftwplxrp0OGhhgwYIwO6HVNN7XtLihJOVWkaLOW7NGgz=s128-c0x00000000-cc-rp-mo",
-      "rating": 5,
-      "text": "I would like to say a big thank you to Jun Wei and the Scrubbys team for helping with my post-renovation cleaning. Despite my busy schedule, they were very accommodating and made the whole process smooth and fuss-free.\n\nThe team did a thorough job cleaning up the house after renovation, and I really appreciate their effort in making the place feel much cleaner and more comfortable. Jun Wei was also very helpful and patient in sharing useful cleaning tips with me, which I found very practical.\n\nOverall, I\u2019m very happy with the service provided by Jun Wei and his team. Thank you once again for the hard work, professionalism, and excellent service. I would definitely recommend Scrubbys to anyone looking for post-renovation cleaning services.",
-      "relative_time": "3 months ago"
-    },
-    {
       "name": "Tan Eehan",
       "photo": "https://lh3.googleusercontent.com/a-/ALV-UjU4lBTMzZJ3ZqQus7FPtgBlV004MIOEHIj22uwj7imB20C97g=s128-c0x00000000-cc-rp-mo-ba3",
       "rating": 5,
       "text": "Got to know Scrubby from one of Overkill\u2019s video. Decided to try out their service for move in cleaning.\n\nThe team deployed 4 helpers and cleaned the 4 room hdb for close to 5 hours. Cleaning quality was excellent and thorough! All the stubborn stains came off after their cleaning. The helpers pay close attention to hidden corners and grills. One of the key differentiator was the engagement manager who was onsite to walk through the cleaning areas and focus ateas to align expectations. He was also there to do debrief after the cleaning was done. Such customer service is greatly appreciated and welcomed.\n\nHighly recommended!!!",
       "relative_time": "3 months ago"
+    },
+    {
+      "name": "Amanda Allais",
+      "photo": "https://lh3.googleusercontent.com/a-/ALV-UjUWk5iJCN7G-88XfFoZfS1ycPoh-PQte4wHUmZO33pwpr2CP48h=s128-c0x00000000-cc-rp-mo",
+      "rating": 5,
+      "text": "I had a great experience with this cleaning company.\nThe team did a very good job, everything was cleaned well.\nThey were also friendly, approachable, and easy to communicate with, which made the whole process smooth and pleasant.\n\nI truly appreciate their professionalism. I will definitely engage their services again in the future.",
+      "relative_time": "4 months ago"
+    },
+    {
+      "name": "Nicole Lu",
+      "photo": "https://lh3.googleusercontent.com/a-/ALV-UjX9Qf9raJ0l9XiSXxpX088lzYAJ1JM1KigmK9wlyN4QqRGRF0Qv=s128-c0x00000000-cc-rp-mo-ba3",
+      "rating": 5,
+      "text": "Scrubby did a post reno for my place and it was worth it! What they achieved in 3 hours will probably take 1-1.5 days for me to clean alone.  3 women pleasant crew! They were so kind to move my items (e.g. tv console/sofa) to clean the floor. Will consider their services again.",
+      "relative_time": "11 months ago"
     }
   ]
 }
