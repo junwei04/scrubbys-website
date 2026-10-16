@@ -18,7 +18,7 @@
 - End of Tenancy Cleaning (also known as end of lease cleaning or move out cleaning): from $380 (300 to 599 sft), scales by size
 - Pre Move In Cleaning: same checklist, pricing, and add ons as End of Tenancy Cleaning, from $380 (300 to 599 sft), scales by size
 - Spring Cleaning: from $380 (300 to 599 sft), scales by size
-- Upholstery Cleaning: sofa, mattress, curtains, carpet/rug, chairs
+- Upholstery Cleaning: sofa, mattress, curtains, carpet/rug, chairs. Sofa cleaning from $40 per seater (steam) or $50 (deep), $120 minimum for standalone jobs
 - Floor Deep Scrub (Rotowash Floor Scrub): vinyl, cement, tiles, parquet, engineered timber, marble, from $250
 - Formaldehyde Treatment: from $288, includes pre and post air quality readings
 - Standalone Cleaning: oven and hood degreasing, window clean and polish, toilet deep clean, quoted individually
@@ -64,6 +64,7 @@ This applies to Post Renovation Cleaning, End of Tenancy Cleaning, Spring Cleani
 - [Pre Move In Cleaning](https://www.scrubbys.sg/pre-move-in-cleaning.html): Full service details, checklist, pricing, FAQ
 - [Spring Cleaning](https://www.scrubbys.sg/spring-cleaning.html): Full service details, checklist, pricing, FAQ
 - [Upholstery Cleaning](https://www.scrubbys.sg/upholstery-cleaning.html): Sofa, mattress, carpet, curtain and chair cleaning, prices, FAQ
+- [Sofa Cleaning](https://www.scrubbys.sg/sofa-cleaning-singapore.html): Sofa and couch cleaning from $40 per seater, steam or deep clean, L shape counting, FAQ
 - [Floor Deep Scrub](https://www.scrubbys.sg/floor-deep-scrub.html): Rotowash Floor Scrub details, surfaces covered, prices, FAQ
 - [Formaldehyde Treatment](https://www.scrubbys.sg/formaldehyde-treatment.html): Treatment process, air quality readings, prices, FAQ
 - [Post Renovation Cleaning Checklist](https://www.scrubbys.sg/post-renovation-cleaning-checklist.html): Room by room guide to cleaning after renovation
